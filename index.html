@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow - Modern Makeup</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Loading Spinner -->
+    <div id="loader" class="loader-wrapper">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glassmorphism">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="#">GLOW<span>.</span></a>
+            
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <i class="fa-solid fa-bars-staggered fs-3 text-dark"></i>
+            </button>
+            
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fw-bold fs-4" id="offcanvasNavbarLabel">GLOW<span>.</span></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#products">المنتجات</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#testimonials">آراء العملاء</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex align-items-center gap-4 nav-icons mt-4 mt-lg-0 justify-content-center">
+                        <a href="#" class="text-dark"><i class="fa-solid fa-magnifying-glass fs-5"></i></a>
+                        <a href="cart.html" class="text-dark position-relative">
+                            <i class="fa-solid fa-bag-shopping fs-5"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary-custom">
+                                2
+                            </span>
+                        </a>
+                        <a href="#" class="text-dark"><i class="fa-regular fa-user fs-5"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section d-flex align-items-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0" data-aos="fade-up" data-aos-duration="1000">
+                    <span class="badge bg-soft-primary text-primary-custom mb-3 px-3 py-2 rounded-pill fw-normal">مجموعة الصيف الجديدة</span>
+                    <h1 class="display-4 fw-bold mb-4">أبرزي جمالك الطبيعي مع <span>GLOW</span></h1>
+                    <p class="lead mb-4 text-muted">اكتشفي مجموعتنا الحصرية من مستحضرات التجميل المصممة بعناية لتمنحك إطلالة ساحرة ومشرقة تدوم طوال اليوم.</p>
+                    <div class="d-flex gap-3 justify-content-center justify-content-lg-start mt-4">
+                        <a href="#products" class="btn btn-primary-custom btn-lg px-4 py-3 rounded-pill shadow-sm fs-6">تسوقي الآن</a>
+                        <a href="#" class="btn btn-outline-dark btn-lg px-4 py-3 rounded-pill fs-6">اكتشفي المزيد</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 position-relative" data-aos="zoom-in" data-aos-duration="1200">
+                    <div class="hero-img-wrapper">
+                        <!-- Makeup Placeholder from Unsplash -->
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Makeup Products" class="img-fluid rounded-4 shadow-lg hero-img" loading="lazy">
+                        
+                        <div class="floating-card glassmorphism p-3 rounded-4 shadow-sm" data-aos="fade-right" data-aos-delay="500">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-box bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm">
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-bold">4.9/5</h6>
+                                    <small class="text-muted">+10k تقييم</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5 bg-light-custom">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold mb-3">المنتجات الأكثر مبيعاً</h2>
+                <p class="text-muted">اختاري من بين أفضل منتجاتنا المفضلة لدى عملائنا</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="d-flex justify-content-center mb-5 flex-wrap gap-2" data-aos="fade-up" data-aos-delay="200">
+                <button class="filter-btn active" data-filter="all">الكل</button>
+                <button class="filter-btn" data-filter="face">الوجه</button>
+                <button class="filter-btn" data-filter="eyes">العيون</button>
+                <button class="filter-btn" data-filter="lips">الشفاه</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="row g-4" id="productGrid">
+                <!-- Products will be injected by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-4 mb-4 mb-lg-0 text-center text-lg-start" data-aos="fade-left">
+                    <h2 class="fw-bold mb-4">ماذا يقول عملاؤنا؟</h2>
+                    <p class="text-muted mb-4">نفخر بثقة آلاف السيدات اللاتي اخترن منتجاتنا لتكون جزءاً من روتين جمالهن اليومي.</p>
+                    <div class="d-flex gap-2 justify-content-center justify-content-lg-start">
+                        <button class="btn btn-outline-dark rounded-circle slider-btn" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                        <button class="btn btn-outline-dark rounded-circle slider-btn" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="col-lg-8" data-aos="fade-right">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner pb-4">
+                            <div class="carousel-item active">
+                                <div class="testimonial-card glassmorphism p-4 p-md-5 rounded-4 mx-2 mt-2">
+                                    <i class="fa-solid fa-quote-right fa-2x text-primary-custom opacity-50 mb-3"></i>
+                                    <p class="fs-5 mb-4 text-dark line-height-lg">"أفضل فاونديشن استخدمته على الإطلاق! التغطية مثالية وخفيفة جداً على البشرة، ويعطي لمعة طبيعية رائعة تدوم طوال اليوم."</p>
+                                    <div class="d-flex align-items-center gap-3 mt-4">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="rounded-circle testimonial-img shadow-sm" width="60" height="60">
+                                        <div>
+                                            <h6 class="fw-bold mb-1">سارة أحمد</h6>
+                                            <div class="text-warning small">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="testimonial-card glassmorphism p-4 p-md-5 rounded-4 mx-2 mt-2">
+                                    <i class="fa-solid fa-quote-right fa-2x text-primary-custom opacity-50 mb-3"></i>
+                                    <p class="fs-5 mb-4 text-dark line-height-lg">"ألوان الروج ثابتة جداً ولا تسبب جفاف للشفاه. الألوان النود عندهم مميزة وتناسب جميع درجات البشرة."</p>
+                                    <div class="d-flex align-items-center gap-3 mt-4">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" class="rounded-circle testimonial-img shadow-sm" width="60" height="60">
+                                        <div>
+                                            <h6 class="fw-bold mb-1">نورة محمد</h6>
+                                            <div class="text-warning small">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star-half-stroke"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-custom text-white py-5">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 pe-lg-5">
+                    <h3 class="fw-bold mb-4 fs-2">GLOW<span class="text-primary-custom">.</span></h3>
+                    <p class="text-white-50 lh-lg">نؤمن بأن الجمال يبدأ من الثقة بالنفس. منتجاتنا مصممة لتعزيز جمالك الطبيعي بمكونات آمنة وعالية الجودة.</p>
+                    <div class="d-flex gap-3 mt-4 social-links">
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#"><i class="fa-brands fa-snapchat"></i></a>
+                        <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">روابط سريعة</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#products">المتجر</a></li>
+                        <li><a href="#">من نحن</a></li>
+                        <li><a href="#">المدونة</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="fw-bold mb-4">خدمة العملاء</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="#">تتبع الطلب</a></li>
+                        <li><a href="#">سياسة الإرجاع</a></li>
+                        <li><a href="#">الأسئلة الشائعة</a></li>
+                        <li><a href="#">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="fw-bold mb-4">النشرة البريدية</h5>
+                    <p class="text-white-50">اشتركي للحصول على أحدث العروض ونصائح الجمال.</p>
+                    <form class="mt-4">
+                        <div class="input-group mb-3 newsletter-form">
+                            <input type="email" class="form-control bg-transparent text-white shadow-none px-4 py-3" placeholder="البريد الإلكتروني" aria-label="Email">
+                            <button class="btn btn-primary-custom px-4 fw-bold" type="button">اشتراك</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="border-secondary mt-5 mb-4 opacity-25">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center text-white-50 small">
+                <div class="mb-2 mb-md-0">
+                    &copy; 2024 GLOW Cosmetics. جميع الحقوق محفوظة.
+                </div>
+                <div class="d-flex gap-3">
+                    <a href="#" class="text-white-50 text-decoration-none hover-white">الشروط والأحكام</a>
+                    <a href="#" class="text-white-50 text-decoration-none hover-white">سياسة الخصوصية</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

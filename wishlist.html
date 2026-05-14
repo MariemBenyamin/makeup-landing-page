@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المفضلة - Glow</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding-top: 100px; background-color: var(--bg-light); }
+        .wishlist-card {
+            border: none;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            background: white;
+            transition: var(--transition);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+            position: relative;
+        }
+        .wishlist-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glassmorphism scrolled">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">GLOW<span>.</span></a>
+            <div class="d-flex align-items-center gap-4 nav-icons mt-lg-0 justify-content-center">
+                <a href="index.html" class="text-dark" title="الرئيسية"><i class="fa-solid fa-house fs-5"></i></a>
+                <a href="cart.html" class="text-dark position-relative" title="السلة">
+                    <i class="fa-solid fa-bag-shopping fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary-custom">2</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Wishlist Section -->
+    <div class="container py-5">
+        <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-4">
+            <h2 class="fw-bold m-0"><i class="fa-solid fa-heart text-danger me-3"></i>قائمة المفضلة</h2>
+            <span class="text-muted fs-5">3 منتجات</span>
+        </div>
+
+        <div class="row g-4">
+            <!-- Product 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="wishlist-card h-100">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="كريم أساس">
+                        <div class="position-absolute top-0 end-0 m-3 z-3">
+                            <button class="btn btn-light rounded-circle shadow-sm text-danger d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="إزالة من المفضلة" onclick="this.closest('.col-lg-3').style.display='none'"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h5 class="fw-bold mb-2">كريم أساس لومينوس</h5>
+                        <div class="d-flex justify-content-center gap-1 mb-2">
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#fcece0; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#f1d4b6; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#d19f70; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#8c5738; border:1px solid rgba(0,0,0,0.1);"></div>
+                        </div>
+                        <div class="text-primary-custom fw-bold fs-5 mb-4">$45.00</div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='cart.html'"><i class="fa-solid fa-cart-plus me-2"></i>إضافة للسلة</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="wishlist-card h-100">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1512496015851-a1c8ceac4188?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="باليت">
+                        <div class="position-absolute top-0 end-0 m-3 z-3">
+                            <button class="btn btn-light rounded-circle shadow-sm text-danger d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="إزالة من المفضلة" onclick="this.closest('.col-lg-3').style.display='none'"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h5 class="fw-bold mb-2">باليت ظلال العيون نود</h5>
+                        <div class="d-flex justify-content-center gap-1 mb-2">
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#d4a373; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#a68a64; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#582f0e; border:1px solid rgba(0,0,0,0.1);"></div>
+                        </div>
+                        <div class="text-primary-custom fw-bold fs-5 mb-4">$35.00</div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='cart.html'"><i class="fa-solid fa-cart-plus me-2"></i>إضافة للسلة</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="wishlist-card h-100">
+                    <div class="product-img-container">
+                        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="أحمر شفاه">
+                        <div class="position-absolute top-0 end-0 m-3 z-3">
+                            <button class="btn btn-light rounded-circle shadow-sm text-danger d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;" title="إزالة من المفضلة" onclick="this.closest('.col-lg-3').style.display='none'"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                    <div class="p-4 text-center">
+                        <h5 class="fw-bold mb-2">أحمر شفاه مخملي</h5>
+                        <div class="d-flex justify-content-center gap-1 mb-2">
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#ffb3c6; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#fb6f92; border:1px solid rgba(0,0,0,0.1);"></div>
+                            <div style="width:12px; height:12px; border-radius:50%; background-color:#c1121f; border:1px solid rgba(0,0,0,0.1);"></div>
+                        </div>
+                        <div class="text-primary-custom fw-bold fs-5 mb-4">$25.00</div>
+                        <button class="btn btn-primary-custom w-100 rounded-pill py-2 fw-bold" onclick="window.location.href='cart.html'"><i class="fa-solid fa-cart-plus me-2"></i>إضافة للسلة</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

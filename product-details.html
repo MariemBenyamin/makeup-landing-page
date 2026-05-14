@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل المنتج - Glow</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding-top: 100px; background-color: var(--light); }
+        .product-main-img { 
+            height: 550px; 
+            object-fit: cover; 
+            border-radius: 2rem; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        }
+        .qty-btn { background: transparent; border: none; font-size: 1.2rem; padding: 0 10px; color: var(--dark); }
+        .qty-btn:hover { color: var(--primary); }
+
+        .shade-selector {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            padding: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .shade-selector:hover { transform: scale(1.1); border: 2px solid var(--text-muted); }
+        .shade-selector.active { border: 3px solid var(--dark); transform: scale(1.1); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glassmorphism scrolled">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">GLOW<span>.</span></a>
+            <div class="d-flex align-items-center gap-4 nav-icons mt-lg-0 justify-content-center">
+                <a href="index.html" class="text-dark" title="الرئيسية"><i class="fa-solid fa-house fs-5"></i></a>
+                <a href="cart.html" class="text-dark position-relative" title="السلة">
+                    <i class="fa-solid fa-bag-shopping fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary-custom">2</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <!-- Product Image -->
+                <div class="position-relative">
+                    <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Product" class="img-fluid w-100 product-main-img" id="detail-img">
+                    <span class="badge bg-dark position-absolute top-0 end-0 m-4 fs-6 rounded-pill px-3 py-2">موصى به</span>
+                </div>
+            </div>
+            <div class="col-lg-6 px-lg-5">
+                <!-- Product Info -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-muted text-decoration-none">الرئيسية</a></li>
+                        <li class="breadcrumb-item"><a href="index.html#products" class="text-muted text-decoration-none">المكياج</a></li>
+                        <li class="breadcrumb-item active fw-bold text-primary-custom" aria-current="page">كريم أساس لومينوس</li>
+                    </ol>
+                </nav>
+
+                <h1 class="fw-bold mb-3 display-5">كريم أساس لومينوس</h1>
+                
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <div class="text-warning fs-5">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <span class="text-muted">(4.8) - 1,240 تقييم</span>
+                </div>
+                
+                <h2 class="text-primary-custom fw-bold mb-4 display-6">$45.00</h2>
+                
+                <p class="text-muted mb-4 line-height-lg fs-5">
+                    يمنحك هذا الفاونديشن تغطية مثالية وخفيفة جداً على البشرة، ليعطي لمعة طبيعية رائعة تدوم طوال اليوم. تركيبة غنية بالفيتامينات المرطبة وحمض الهيالورونيك لحماية وتغذية بشرتك.
+                </p>
+
+                <div class="mb-5">
+                    <h6 class="fw-bold mb-3">اختر الدرجة: <span id="selected-shade-name" class="text-muted fw-normal">Light</span></h6>
+                    <div class="d-flex gap-3">
+                        <button class="shade-selector" style="background-color: #fcece0;" data-name="Fair" onclick="selectShade(this)"></button>
+                        <button class="shade-selector active" style="background-color: #f1d4b6;" data-name="Light" onclick="selectShade(this)"></button>
+                        <button class="shade-selector" style="background-color: #d19f70;" data-name="Medium" onclick="selectShade(this)"></button>
+                        <button class="shade-selector" style="background-color: #8c5738;" data-name="Deep" onclick="selectShade(this)"></button>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row gap-3 align-items-center mt-5 mb-4">
+                    <!-- Quantity -->
+                    <div class="border rounded-pill px-4 py-3 d-flex align-items-center justify-content-between bg-white w-100" style="max-width: 150px;">
+                        <button class="qty-btn" onclick="updateQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                        <span class="fw-bold fs-5" id="qty">1</span>
+                        <button class="qty-btn" onclick="updateQty(1)"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    
+                    <!-- Add to Cart -->
+                    <button class="btn btn-primary-custom px-5 py-3 rounded-pill flex-fill fs-5 fw-bold w-100 shadow-sm" onclick="window.location.href='cart.html'">
+                        <i class="fa-solid fa-bag-shopping me-2"></i> إضافة للسلة
+                    </button>
+                </div>
+                
+                <button class="btn btn-outline-danger px-4 py-3 rounded-pill w-100 fs-6 fw-bold" onclick="window.location.href='wishlist.html'">
+                    <i class="fa-regular fa-heart me-2"></i>إضافة للمفضلة
+                </button>
+
+                <!-- Additional Info Accordion -->
+                <div class="accordion mt-5 accordion-flush border-top" id="productAccordion">
+                    <div class="accordion-item bg-transparent">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-transparent fw-bold fs-5 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                المكونات الرئيسية
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#productAccordion">
+                            <div class="accordion-body text-muted line-height-lg">
+                                ماء، سيكلوبنتاسيلوكسان، جلسرين، حمض الهيالورونيك، فيتامين E، مستخلص الشاي الأخضر. خالي من البارابين والعطور الصناعية.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item bg-transparent">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed bg-transparent fw-bold fs-5 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                طريقة الاستخدام
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#productAccordion">
+                            <div class="accordion-body text-muted line-height-lg">
+                                ضعي مضخة واحدة على ظهر يدك، ثم وزعيها باستخدام فرشاة الأساس أو إسفنجة مبللة من منتصف الوجه للخارج.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function updateQty(change) {
+            const qtySpan = document.getElementById('qty');
+            let currentQty = parseInt(qtySpan.innerText);
+            let newQty = currentQty + change;
+            if(newQty >= 1 && newQty <= 10) {
+                qtySpan.innerText = newQty;
+            }
+        }
+
+        function selectShade(element) {
+            document.querySelectorAll('.shade-selector').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+            document.getElementById('selected-shade-name').innerText = element.getAttribute('data-name');
+        }
+    </script>
+</body>
+</html>

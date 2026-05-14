@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الإدارة - إضافة منتج - Glow</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { padding-top: 100px; background-color: var(--bg-light); }
+        .admin-card { border-radius: 1.5rem; border: none; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glassmorphism scrolled">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-3" href="index.html">GLOW<span class="text-danger fs-6 ms-2">Admin</span></a>
+            <div class="d-flex align-items-center gap-4 nav-icons mt-lg-0 justify-content-center">
+                <a href="index.html" class="text-dark" title="الرئيسية"><i class="fa-solid fa-house fs-5"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Admin Section -->
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold mb-3"><i class="fa-solid fa-plus-circle text-primary-custom me-2"></i>إضافة منتج جديد للمتجر</h2>
+                    <p class="text-muted">المنتجات التي ستضيفها هنا ستظهر تلقائياً في الصفحة الرئيسية للموقع للمستخدمين.</p>
+                </div>
+
+                <div class="card admin-card p-4 p-md-5">
+                    <form id="add-product-form">
+                        <div class="row g-4">
+                            <!-- Product Name -->
+                            <div class="col-12">
+                                <label class="form-label fw-bold">اسم المنتج</label>
+                                <input type="text" id="p-name" class="form-control px-4 py-3 rounded-3 bg-light border-0" placeholder="مثال: أحمر شفاه ماك" required>
+                            </div>
+
+                            <!-- Category -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">القسم (التصنيف)</label>
+                                <select id="p-category" class="form-select py-3 rounded-3 bg-light border-0" required>
+                                    <option value="face">الوجه (Face)</option>
+                                    <option value="eyes">العيون (Eyes)</option>
+                                    <option value="lips">الشفاه (Lips)</option>
+                                </select>
+                            </div>
+
+                            <!-- Price -->
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">السعر بالدولار ($)</label>
+                                <input type="number" id="p-price" step="0.01" class="form-control px-4 py-3 rounded-3 bg-light border-0" placeholder="مثال: 45.00" required>
+                            </div>
+
+                            <!-- Image URL -->
+                            <div class="col-12">
+                                <label class="form-label fw-bold">رابط صورة المنتج (URL)</label>
+                                <input type="url" id="p-image" class="form-control px-4 py-3 rounded-3 bg-light border-0" placeholder="https://example.com/image.jpg" required>
+                                <small class="text-muted mt-2 d-block">يفضل استخدام روابط صور من Unsplash للحصول على جودة عالية.</small>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="col-12 mt-5">
+                                <button type="submit" class="btn btn-primary-custom w-100 py-3 fs-5 rounded-pill fw-bold shadow-lg">
+                                    <i class="fa-solid fa-check me-2"></i> إضافة ونشر المنتج
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.getElementById('add-product-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('p-name').value.trim();
+            const category = document.getElementById('p-category').value;
+            const price = parseFloat(document.getElementById('p-price').value);
+            const image = document.getElementById('p-image').value.trim();
+
+            // Retrieve existing products or initialize if none
+            let products = JSON.parse(localStorage.getItem('glow_products'));
+            if (!products) {
+                // If the user hasn't loaded the homepage yet, we don't have default products in localStorage.
+                // We will create an empty array. The homepage will handle merging.
+                products = [];
+            }
+
+            // Create new product object
+            const newProduct = {
+                id: Date.now(), // unique ID based on timestamp
+                name: name,
+                category: category,
+                price: price,
+                rating: 5.0, // Default rating for new products
+                image: image,
+                isNew: true,
+                shades: ['#d4a373', '#a68a64'] // Default shades for demo
+            };
+
+            // Add to array and save
+            products.push(newProduct);
+            localStorage.setItem('glow_products', JSON.stringify(products));
+
+            // Show success message
+            Swal.fire({
+                title: 'تم الإضافة بنجاح!',
+                text: 'تم إضافة المنتج إلى المتجر، سيظهر الآن تلقائياً في الصفحة الرئيسية للمستخدمين.',
+                icon: 'success',
+                confirmButtonText: 'الذهاب للمتجر',
+                confirmButtonColor: '#D4A373'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'index.html#products';
+                }
+            });
+
+            // Reset form
+            this.reset();
+        });
+    </script>
+</body>
+</html>
